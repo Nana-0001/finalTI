@@ -1,0 +1,11 @@
+body{
+    background-color: burlywood;
+}
+main{
+    background-color: #ffc0cb;
+}
+
+article{
+    background-color: aliceblue;
+    display: inline-block;
+}
