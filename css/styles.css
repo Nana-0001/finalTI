@@ -45,3 +45,20 @@ article{
     border: solid 1px;
     border-color: lightgrey;
 }
+.dark button{
+    background-color: transparent;
+    color: lightgrey;
+    border-color: lightgray;
+    border: solid 1px;
+}
+button{
+    background-color: transparent ;
+    border: solid 1px;
+    border-color: black;
+    cursor: pointer;
+    padding: 1px 2px;
+}
+img{
+    max-height: 100%;
+    max-width: 100%;
+}
