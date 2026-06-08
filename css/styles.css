@@ -36,7 +36,7 @@ main, #inicio, #resena, footer, #gaming, #tecnologia, #musica, #deportes, #chism
     margin: 40px 30px;
 }/*para que quede espacio*/
 
-#modoOscuro {
+#boton-dark-mode {
     position: absolute;
     top: 20px;
     right: 20px;
