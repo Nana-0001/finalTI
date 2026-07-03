@@ -81,7 +81,6 @@ btnGuardar.addEventListener("click", function () {
         imagen,
         categoria,
         destacada: noticiaVieja.destacada ?? false,
-        link: noticiaVieja.link?? ""
     };
 
     if (id === "") {

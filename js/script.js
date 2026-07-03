@@ -24,12 +24,6 @@ function renderizarNoticias() {
             <h3>${noticia.titulo}</h3>
             <p>${noticia.descripcion}</p>
         `;
-
-        const boton = articulo.querySelector("button");
-
-        boton.addEventListener("click", function () {
-            window.location.href = noticia.link;
-        });
         contenedor.appendChild(articulo);
     });
 }
