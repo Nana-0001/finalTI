@@ -54,6 +54,7 @@ btnGuardar.addEventListener("click", function () {
 
     const categoriaSeleccionada =
         document.querySelector('input[name="categoria"]:checked');
+    
     if (!categoriaSeleccionada) {
     alert("Seleccione una categoría.");
     return;
@@ -62,6 +63,20 @@ btnGuardar.addEventListener("click", function () {
 
     const destacada =
     document.getElementById("noticia-destacada").checked;
+
+    // IMPORTANTE: id tiene que ir antes de usarlo
+    const noticiaId= document.getElementById("noticia-id").value;
+
+    const cantidadDestacadas =
+        noticias.filter(n => n.destacada).length;
+
+    const yaEraDestacada =
+        noticiaId !== "" && noticias[noticiaId]?.destacada;
+
+    if (destacada && !yaEraDestacada && cantidadDestacadas >= 3) {
+        alert("Solo puede haber 3 noticias destacadas.");
+        return;
+    }
 
     if (!titulo || !descripcion || !imagen) {
         alert("Complete todos los campos.");
