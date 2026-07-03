@@ -13,6 +13,8 @@ const btnGuardar = document.getElementById("btn-guardar-noticia");
 const btnCancelar = document.getElementById("btn-cancelar");
 const tabla = document.getElementById("tabla-edicion");
 const btnCerrarSesion = document.getElementById("btn-cerrar-sesion");
+console.log("admin.js cargó");
+console.log(btnGuardar);
 
 function guardarNoticias() {
     localStorage.setItem(
@@ -48,6 +50,14 @@ btnGuardar.addEventListener("click", function () {
     const imagen =
         document.getElementById("noticia-imagen").value.trim();
 
+    const categoriaSeleccionada =
+        document.querySelector('input[name="categoria"]:checked');
+    if (!categoriaSeleccionada) {
+    alert("Seleccione una categoría.");
+    return;
+    }
+    const categoria = categoriaSeleccionada.value;
+
     if (!titulo || !descripcion || !imagen) {
         alert("Complete todos los campos.");
         return;
@@ -59,18 +69,20 @@ btnGuardar.addEventListener("click", function () {
         alert("Ingrese una URL válida.");
         return;
     }
-
+    const id =
+        document.getElementById("noticia-id").value;
+    
+    const noticiaVieja = 
+        id==""? {} : noticias[id];
+    
     const noticia = {
         titulo,
         descripcion,
         imagen,
         categoria,
-        destacada,
-        link,
+        destacada: noticiaVieja.destacada ?? false,
+        link: noticiaVieja.link?? ""
     };
-
-    const id =
-        document.getElementById("noticia-id").value;
 
     if (id === "") {
 
@@ -144,20 +156,23 @@ function modificarNoticia(indice) {
 
     const noticia = noticias[indice];
 
-    document.getElementById("noticia-id").value =
-        indice;
+    document.getElementById("noticia-id").value = indice;
 
-    document.getElementById("noticia-titulo").value =
-        noticia.titulo;
+    document.getElementById("noticia-titulo").value = noticia.titulo;
 
-    document.getElementById("noticia-descripcion").value =
-        noticia.descripcion;
+    document.getElementById("noticia-descripcion").value = noticia.descripcion;
 
-    document.getElementById("noticia-imagen").value =
-        noticia.imagen;
+    document.getElementById("noticia-imagen").value = noticia.imagen;
+
+    const radio = document.querySelector(
+        `input[name="categoria"][value="${noticia.categoria}"]`
+    );
+
+    if (radio) {
+        radio.checked = true;
+    }
 
     btnCancelar.style.display = "inline";
-
     document.getElementById("titulo-formulario").textContent =
         "Modificar noticia";
 }
