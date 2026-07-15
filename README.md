@@ -19,7 +19,7 @@
 
 TeenNews es un portal de noticias orientado a adolescentes desarrollado utilizando *HTML, CSS y JavaScript Vanilla*, sin frameworks externos.
 
-El sitio permite visualizar noticias, realizar búsquedas, consultar la cotización actual del dólar, alternar entre modo claro y oscuro y administrar el contenido mediante un panel exclusivo para administradores.
+El sitio permite visualizar noticias organizadas por categorías mediante carruseles con navegación horizontal, realizar búsquedas, consultar la cotización actual del dólar, alternar entre modo claro y oscuro y administrar el contenido mediante un panel exclusivo para administradores.
 
 La aplicación implementa almacenamiento local mediante *LocalStorage, gestión de sesiones utilizando **SessionStorage* y consumo de APIs externas mediante *Fetch API*.
 
@@ -34,6 +34,7 @@ La aplicación implementa almacenamiento local mediante *LocalStorage, gestión 
 * Diseño adaptado para una navegación simple e intuitiva.
 * Modo oscuro persistente.
 * Visualización de cotización del dólar oficial y dólar blue en tiempo real.
+* Carruseles de noticias con navegación horizontal mediante flechas, permitiendo recorrer las noticias de cada categoría de forma dinámica.
 
 ## Panel de Administración
 
@@ -180,6 +181,7 @@ Durante el desarrollo del proyecto se trabajó con:
 * Programación asíncrona con async/await.
 * Consumo de APIs mediante fetch().
 * Control de errores mediante try/catch.
+* Scroll horizontal y manipulación dinámica del desplazamiento mediante JavaScript.
 * Trabajo colaborativo utilizando Git y GitHub.
 
 ---

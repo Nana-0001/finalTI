@@ -2,11 +2,46 @@
     font-family: "BrightKenly";
     src: url("../assets/BrightKenly.ttf") format("opentype");
 }
-.secDeNoticias {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px;
+.secDeNoticias{
+    display:flex;
+    gap:20px;
+    overflow-x:auto;
+    scroll-behavior:smooth;
+    scrollbar-width:none;
+    flex:1;
 }
+
+.secDeNoticias::-webkit-scrollbar{
+    display:none;
+}
+
+.secDeNoticias article{
+    flex:0 0 320px;
+}
+
+.carrusel{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.flecha{
+    width:45px;
+    height:45px;
+    border:none;
+    border-radius:50%;
+    background:#2563eb;
+    color:white;
+    font-size:22px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.flecha:hover{
+    background:#1d4ed8;
+    transform:scale(1.1);
+}
+
 #resena, footer, .secDeNoticias {
     margin: 40px 30px;
 }
